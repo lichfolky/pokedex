@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul class="pokeRng">
+        <li
+          v-for="pokemon in pokeRandom(5)"
+          @click="currentPokemonSearch = pokemon"
+        >
+          {{ pokemon }}
+        </li>
+      </ul>
+      <input
+        type="text"
+        v-model="currentPokemonSearch"
+        @keydown.enter="pokemonSearchHandler"
+      />
+      <button @click="pokemonSearchHandler">Cerca</button>
+      <div v-if="currentPokemon?.name != ''">
+        <div class="pokeDataDisplay">
+          <span class="arrow" @click="previusDescription">&lt;</span>
+
+          <div class="pokeData">
+            <h2>{{ currentPokemon.name + " (" + (dataIndex + 1) + ")" }}</h2>
+            <p>{{ currentPokemon.pokeData[dataIndex] }}</p>
+          </div>
+          <span class="arrow" @click="nextDescription">&gt;</span>
+        </div>
+      </div>
+      <div class="pokeInfo">{{ pokeInfo }}</div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

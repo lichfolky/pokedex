@@ -1,0 +1,57 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  min-height: 100vh;
+}
+
+a,
+button {
+  color: #4fc08d;
+}
+
+input {
+  background: none;
+  border: #2c3e50 solid 0px;
+  border-bottom: #2c3e50 solid 2px;
+  color: #2c3e50;
+  border-radius: 0px;
+  font: inherit;
+  padding: 0.75em 1em;
+}
+
+.pokeDataDisplay {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.pokeData {
+  width: 30ch;
+}
+
+.arrow {
+  padding: 6rem 2rem;
+  font-weight: 900;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pokeInfo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  min-height: 2rem;
+  width: 100vw;
+  color: white;
+  background: #2c3e50;
+  padding: 0.2rem;
+  text-align: left;
+}
+.pokeRng {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 2rem;
+  cursor: pointer;
+}
